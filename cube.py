@@ -2,6 +2,7 @@
 
 import numpy
 from shape import Shape
+from ulti import iterable_to_chunks
 
 class Cube(Shape):
 
