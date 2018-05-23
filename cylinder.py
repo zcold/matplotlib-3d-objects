@@ -59,7 +59,7 @@ class Cylinder(Shape):
         self.position[self.height_dimension] + \
         self.height * numpy.outer(numpy.ones(numpy.size(r)), h)
 
-      shell = ax.plot_surface(
+      shell = self.ax.plot_surface(
         shell_points[0], shell_points[1], shell_points[2],
         rstride = self.rstride, cstride = self.cstride, **kwargs)
 
@@ -88,7 +88,7 @@ class Cylinder(Shape):
           self.position[self.height_dimension] + \
           self.height * numpy.ones([self.detail_level, self.detail_level])
 
-        top_cover = ax.plot_surface(
+        top_cover = self.ax.plot_surface(
           top_cover_points[0], top_cover_points[1], top_cover_points[2],
           rstride = self.rstride*2, cstride = self.cstride*2, **kwargs)
 
@@ -106,7 +106,7 @@ class Cylinder(Shape):
           self.position[self.height_dimension] + \
           numpy.zeros([self.detail_level, self.detail_level])
 
-        bottom_cover = ax.plot_surface(
+        bottom_cover = self.ax.plot_surface(
           bottom_cover_points[0], bottom_cover_points[1], bottom_cover_points[2],
           rstride = self.rstride*2, cstride = self.cstride*2, **kwargs)
 
